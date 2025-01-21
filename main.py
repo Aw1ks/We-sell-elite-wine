@@ -7,20 +7,21 @@ from collections import defaultdict
 
 
 def get_correct_form_word_year(age_difference):
-    delta_new = age_difference % 100
-    if 21 > delta_new > 4:
+    last_digit = age_difference % 100
+    if 21 > last_digit > 4:
         return "лет"
-    delta_new = age_difference % 10
-    if delta_new == 1:
+
+    last_digit = age_difference % 10
+    if last_digit == 1:
         return "год"
-    elif 1 < delta_new < 5:
+    elif 1 < last_digit < 5:
         return "года"
     return "лет"
 
 
 def get_information_excel_table():
-    excel_wine_2 = pandas.read_excel('wine3.xlsx', na_values=' ', keep_default_na=False)
-    wines = excel_wine_2.to_dict(orient='records')
+    excel_table = pandas.read_excel('wine3.xlsx', na_values=' ', keep_default_na=False)
+    wines = excel_table.to_dict(orient='records')
     sorted_wines = defaultdict(list) 
 
     for wine in wines:
