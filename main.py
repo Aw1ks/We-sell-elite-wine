@@ -19,7 +19,7 @@ def get_correct_form_word_year(age_difference):
     return "лет"
 
 
-def get_information_excel_table():
+def get_information_from_excel_table():
     excel_table = pandas.read_excel('wine3.xlsx', na_values=' ', keep_default_na=False)
     wines = excel_table.to_dict(orient='records')
     sorted_wines = defaultdict(list) 
@@ -50,7 +50,7 @@ def main():
     age_difference = today_date.year - date_creation
 
     year_shape = get_correct_form_word_year(age_difference)
-    wines = get_information_excel_table()
+    wines = get_information_from_excel_table()
 
     rendered_page = template.render(
         age_of_wine=age_difference,
