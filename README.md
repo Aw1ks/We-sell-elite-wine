@@ -6,6 +6,11 @@ Python3 should already be installed. Use pip (or pip3, there is a conflict with 
 ```
 pip install -r requirements.txt
 ```
+## Environment variables
+Environment variables are key—value pairs that determine the settings and behavior of the operating system and programs. 
+```
+EXCEL_TABLE='your excel spreadsheet'
+```
 ## How to check
 To check the final result of the project, run the file (main.py ) with the:
 ```
