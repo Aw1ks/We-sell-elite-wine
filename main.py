@@ -6,7 +6,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from collections import defaultdict
 
 
-def year_shape_generator(age_difference):
+def get_correct_form_word_year(age_difference):
     delta_new = age_difference % 100
     if 21 > delta_new > 4:
         return "лет"
@@ -48,7 +48,7 @@ def main():
 
     age_difference = today_date.year - date_creation
 
-    year_shape = year_shape_generator(age_difference)
+    year_shape = get_correct_form_word_year(age_difference)
     wines = get_information_excel_table()
 
     rendered_page = template.render(
