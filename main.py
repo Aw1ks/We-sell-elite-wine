@@ -1,9 +1,11 @@
 import datetime
 import pandas
+import os
 
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from collections import defaultdict
+from dotenv import load_dotenv
 
 
 def get_correct_form_word_year(age_difference):
@@ -20,7 +22,7 @@ def get_correct_form_word_year(age_difference):
 
 
 def get_information_from_excel_table():
-    excel_table = pandas.read_excel('wine3.xlsx', na_values=' ', keep_default_na=False)
+    excel_table = pandas.read_excel(excel_spreadsheet, na_values=' ', keep_default_na=False)
     wines = excel_table.to_dict(orient='records')
     sorted_wines = defaultdict(list) 
 
@@ -38,6 +40,10 @@ def get_information_from_excel_table():
 
 
 def main():
+    load_dotenv()
+
+    excel_spreadsheet = oc.getenv('EXCEL_TABLE')
+    
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
