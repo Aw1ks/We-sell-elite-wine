@@ -11,4 +11,4 @@ To check the final result of the project, run the file (main.py ) with the:
 ```
 python' command main.py
 ```
-If you have correctly linked the code to the excel spreadsheet and configured the file template.htm then a file should be created that looks like index.html
+If you have correctly linked the code to the [excel](https://github.com/Aw1ks/We-sell-elite-wine/blob/main/wine3.xlsx) spreadsheet and configured the file template.htm then a file should be created that looks like index.html
