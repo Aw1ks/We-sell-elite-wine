@@ -29,14 +29,7 @@ def get_information_from_excel_table():
     for wine in wines:
         sorted_wines[wine['Категория']].append(wine)
 
-    category_order = ['Белые вина', 'Красные вина', 'Напитки']
-    ordered_wines = {}
-    
-    for category in category_order:
-        if category in sorted_wines:
-            ordered_wines[category] = sorted_wines[category]
-
-    return ordered_wines
+    return sorted_wines
 
 
 def main():
